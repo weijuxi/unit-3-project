@@ -31,7 +31,7 @@ const movieSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    review: [reviewSchema]
+    reviews: [reviewSchema]
 })
 
 
