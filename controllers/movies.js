@@ -42,7 +42,8 @@ router.post('/:id/reviews', async function(req, res) {
     console.log(req.user, '<- from the jwt')
     try{
         const movieDoc = await MovieModel.findById(req.params.id)
-
+        req.body.author = req.user._id
+        req.body.authorName = req.user.username
         movieDoc.reviews.push(req.body)
 
         await movieDoc.save()
