@@ -14,28 +14,10 @@ const reviewSchema = mongoose.Schema({
         required: true
     },
     author: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-    authorName: String
-})
-
-const movieSchema = mongoose.Schema({
-    title: {
-        type: String,
-        required: true
-    },
-    genre: {
-        type: String,
-        required: true,
-        enums: ['Fantasy', 'Mystery', 'Drama', 'Suspense', 'Action', 'Superhero','Romance']
-    },
-    description: {
-        type: String,
-        required: true
-    },
-    image: {
-        type: String
-    },
-    reviews: [reviewSchema]
+    authorName: String,
+    movieId: String
 })
 
 
-module.exports = mongoose.model('Review', movieSchema)
+
+module.exports = mongoose.model('Review', reviewSchema)
