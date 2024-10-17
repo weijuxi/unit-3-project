@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const axios = require('axios');
 const MovieModel = require('../models/movie')
 
 const OMDB_API_KEY = '31e9d121';
